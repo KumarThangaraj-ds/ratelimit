@@ -9,8 +9,7 @@ app = FastAPI()
 
 # These are frontend origins allowed to call this API from browser
 origins = [
-    "https://dash-650zd5.example.com",
-    "http://localhost:4200"
+    "https://app-ag28dm.example.com"
 ]
 EMAIL = "23ds1000074@ds.study.iitm.ac.in"  # replace with your real logged-in email
 
