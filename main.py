@@ -50,9 +50,12 @@ app.add_middleware(RequestContextMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,          # Do not use ["*"] for real apps with login/cookies
-    allow_methods=["GET", "POST", "PATCH", "DELETE"],
-    allow_headers=["Authorization", "Content-Type"],
+    #allow_origins=origins,          # Do not use ["*"] for real apps with login/cookies
+    allow_origins=["*"],
+    #allow_methods=["GET", "POST", "PATCH", "DELETE"],
+    allow_methods=["*"],
+    #allow_headers=["Authorization", "Content-Type"],
+    allow_headers=["*"]
 )
 
 app.add_middleware(RateLimitMiddleware, limit=11, window_seconds=10)
