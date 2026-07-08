@@ -7,7 +7,7 @@ import time
 
 app = FastAPI()
 
-ALLOWED_ORIGIN = "https://app-ag28dm.example.com"
+ALLOWED_ORIGIN = "app-ag28dm.example.com"
 EMAIL = "23ds1000074@ds.study.iitm.ac.in"  # replace with your real logged-in email
 
 # 1) Request-context middleware
@@ -48,7 +48,7 @@ app.add_middleware(RequestContextMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[ALLOWED_ORIGIN],
-    allow_credentials=False,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
