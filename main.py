@@ -9,7 +9,7 @@ app = FastAPI()
 
 # These are frontend origins allowed to call this API from browser
 origins = [
-    "https://app-ag28dm.example.com"
+    "https://app-ag28dm.example.com", "https://exam.sanand.workers.dev"
 ]
 EMAIL = "23ds1000074@ds.study.iitm.ac.in"  # replace with your real logged-in email
 
@@ -50,12 +50,12 @@ app.add_middleware(RequestContextMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
-    #allow_origins=origins,          # Do not use ["*"] for real apps with login/cookies
-    allow_origins=["*"],
-    #allow_methods=["GET", "POST", "PATCH", "DELETE"],
-    allow_methods=["*"],
-    #allow_headers=["Authorization", "Content-Type"],
-    allow_headers=["*"]
+    allow_origins=origins,          # Do not use ["*"] for real apps with login/cookies
+    #allow_origins=["*"],
+    allow_methods=["GET", "POST", "PATCH", "DELETE"],
+    #allow_methods=["*"],
+    allow_headers=["Authorization", "Content-Type"],
+    #allow_headers=["*"]
 )
 
 app.add_middleware(RateLimitMiddleware, limit=11, window_seconds=10)
